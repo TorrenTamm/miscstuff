@@ -1,0 +1,24 @@
+//
+
+zone "vikktest.local" IN {
+     type master;
+     
+     file "etc/bind/forward.vikktest.local.db";
+
+     allow-update { none; };
+};
+
+zone "0.100.10.in-addr.arpa" IN {
+     type master;
+
+     file "/etc/bind/reverse.vikktest.local.db";
+
+     allow-update { none; };
+};
+
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
