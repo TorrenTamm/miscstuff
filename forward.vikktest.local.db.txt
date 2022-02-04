@@ -1,0 +1,37 @@
+
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     dns.vikktest.local. root.vikktest.local. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+; Commentout below three lines
+;@      IN      NS      localhost.
+;@      IN      A       127.0.0.1
+;@      IN      AAAA    ::1
+
+;Name Server Information
+
+@       IN      NS      dns.vikktest.local.
+
+;IP address of Name Server
+
+dns     IN      A       10.100.0.2
+
+;Mail Exchanger
+
+vikktest.local.   IN     MX   10   mail.vikktest.local.
+
+;A – Record HostName To Ip Address
+
+www     IN       A      10.100.0.3
+mail    IN       A      10.100.0.4
+
+;CNAME record
+
+ftp     IN      CNAME   www.vikktest.local.
